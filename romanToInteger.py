@@ -13,5 +13,6 @@ def romanToInt(s: str) -> int:
             counter += 2
         else:
             counter += 1
+    return result
 
 print(romanToInt("MMMCDXC"))
