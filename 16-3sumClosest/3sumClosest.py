@@ -1,13 +1,26 @@
 def threeSumClosest(nums, target):
-    closest = sum(nums[0:2])
+    nums.sort()
+    closest = nums[0] + nums[1] + nums[2]
 
     for i in range(len(nums) - 2):
-        if (target - sum(nums[i:i + 3])) < closest:
-            closest = sum(nums[i:i + 3])
+        high = len(nums) - 1
+        low = i + 1
+
+        while low < high:
+            curr = nums[i] + nums[low] + nums[high]
+            if abs(curr - target) < abs(closest - target):
+                closest = curr
+
+            if curr < target:
+                low +=1
+            elif curr > target:
+                high -= 1
+            else:
+                return target
 
     return closest
 
-nums = [-1,2,1,-4]
-target = 1
+nums = [0, 1, 2]
+target = 0
 
 print(threeSumClosest(nums,target))
