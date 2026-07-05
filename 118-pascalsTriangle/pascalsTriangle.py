@@ -10,11 +10,6 @@ def generate(numRows):
             triangle.append(curr)
             continue
 
-        if i == 1:
-            curr.append(1)
-            triangle.append(curr)
-            continue
-
         while len(curr) < i:
             curr.append(triangle[i - 1][len(curr)] + triangle[i - 1][len(curr) - 1])
 
