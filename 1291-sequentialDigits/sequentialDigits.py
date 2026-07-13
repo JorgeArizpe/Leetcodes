@@ -6,7 +6,7 @@ def sequentialDigits(low, high):
         if x < 9:
             numbers.append(number * 10 + x + 1)
 
-    return [number for number in numbers if low < number < high]
+    return [number for number in numbers if low <= number <= high]
 
 low = 10
 high = 1000000000
